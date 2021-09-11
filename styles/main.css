@@ -3,7 +3,22 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: #60a3bc !important;
+    /*background: #60a3bc !important;*/
+    background-image: repeating-linear-gradient(
+      135deg,
+      hsla(35, 0%, 71%, 0.09) 0px,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      hsla(35, 0%, 71%, 0.09) 0px,
+      hsla(35, 0%, 71%, 0.09) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, hsl(183, 0%, 100%), hsl(183, 0%, 100%));
 }
 
 .user_card {
@@ -29,7 +44,7 @@ html {
     width: 170px;
     top: -75px;
     border-radius: 50%;
-    background: #60a3bc;
+    background: #bc609da8;
     padding: 10px;
     text-align: center;
 }
