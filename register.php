@@ -38,6 +38,7 @@ if(isset($_POST['submit']))
                     $handle->execute($params);
 
                     $success = 'Vous êtes désormais un utilisateur de la plateforme';
+                    $success .= '<br/><a href="login.php" class="ml-2">Connectez-vous !</a>';
 
                 }
                 catch(PDOException $e){
@@ -116,7 +117,22 @@ if(isset($_POST['submit']))
 
 <body>
     <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+            <?php
+                if(isset($errors) && count($errors) > 0)
+                {
+                    foreach($errors as $error_msg)
+                    {
+                        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
+                    }
+                }
+
+                if(isset($success))
+                {
+
+                    echo '<div class="alert alert-success text-center mt-3">'.$success.'</div>';
+                }
+            ?>
             <div class="user_card">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
@@ -164,21 +180,6 @@ if(isset($_POST['submit']))
                     </div-->
                 </div>
             </div>
-            <?php
-                if(isset($errors) && count($errors) > 0)
-                {
-                    foreach($errors as $error_msg)
-                    {
-                        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
-                    }
-                }
-
-                if(isset($success))
-                {
-
-                    echo '<div class="alert alert-success">'.$success.'</div>';
-                }
-            ?>
         </div>
     </div>
 </body>
