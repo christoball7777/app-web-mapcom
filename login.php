@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
         if(filter_var($email, FILTER_VALIDATE_EMAIL))
         {
             $sql = "select * from user where email = :email ";
-            $handle = $pdo->prepare($sql);
+            $handle = $db->prepare($sql);
             $params = ['email'=>$email];
             $handle->execute($params);
             if($handle->rowCount() > 0)
