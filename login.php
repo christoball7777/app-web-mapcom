@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
 
         if(filter_var($email, FILTER_VALIDATE_EMAIL))
         {
-            $sql = "select * from user where email = :email ";
+            $sql = "select * from user where identifiant = :email ";
             $handle = $db->prepare($sql);
             $params = ['email'=>$email];
             $handle->execute($params);
