@@ -125,7 +125,7 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
@@ -139,7 +139,7 @@ if(isset($_POST['submit']))
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
                             <input required type="text" name="email" class="form-control input_user" placeholder="Email">
                         </div>
@@ -164,6 +164,21 @@ if(isset($_POST['submit']))
                     </div-->
                 </div>
             </div>
+            <?php
+                if(isset($errors) && count($errors) > 0)
+                {
+                    foreach($errors as $error_msg)
+                    {
+                        echo '<div class="alert alert-danger">'.$error_msg.'</div>';
+                    }
+                }
+
+                if(isset($success))
+                {
+
+                    echo '<div class="alert alert-success">'.$success.'</div>';
+                }
+            ?>
         </div>
     </div>
 </body>
