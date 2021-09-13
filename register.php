@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
         if(filter_var($email, FILTER_VALIDATE_EMAIL))
         {
             $sql = 'select * from user where identifiant = :email';
-            $stmt = $pdo->prepare($sql);
+            $stmt = $db->prepare($sql);
             $p = ['email'=>$email];
             $stmt->execute($p);
 
@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
                 $sql = "insert into user (name, surname, identifiant, `password`) values(:fname,:lname,:email,:pass)";
 
                 try{
-                    $handle = $pdo->prepare($sql);
+                    $handle = $db->prepare($sql);
                     $params = [
                         ':fname'=>$firstName,
                         ':lname'=>$lastName,
