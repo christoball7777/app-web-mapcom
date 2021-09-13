@@ -88,7 +88,7 @@ if(isset($_POST['submit']))
                             <input required type="password" name="password" class="form-control input_pass" placeholder="Mot de passe">
                         </div>
                         <div class="d-flex justify-content-center mt-3 px-0 login_container">
-                            <input name="submit" type="submit" class="btn login_btn" value="Login">
+                            <input name="submit" type="submit" class="btn login_btn" value="Se connecter">
                         </div>
                     </form>
                 </div>
