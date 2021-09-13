@@ -63,7 +63,7 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="styles/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<!--Coded with love by Mutiullah Samim-->
+
 <body>
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
@@ -79,7 +79,7 @@ if(isset($_POST['submit']))
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input required type="text" name="email" class="form-control input_user" placeholder="Email">
+                            <input required type="email" name="email" class="form-control input_user" placeholder="Email">
                         </div>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
