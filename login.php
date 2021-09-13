@@ -75,9 +75,9 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <div class="input-group-append">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                             </div>
                             <input required type="email" name="email" class="form-control input_user" placeholder="Email">
                         </div>
