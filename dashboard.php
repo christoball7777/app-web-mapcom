@@ -1,3 +1,17 @@
+<?php
+require_once 'database/connection.php';
+
+try {
+
+    $sql = 'SELECT * FROM user';
+    $q = $db->query($sql);
+    $q->setFetchMode(PDO::FETCH_ASSOC);
+
+} catch (PDOException $e) {
+    die("Could not connect to the database" . $e->getMessage());
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,11 +60,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                        <?php
+                                            while ($row = $q->fetch()):
+                                                ?>
+
+                                            <th scope="row"><?php echo htmlspecialchars($row['user_id']) ?></th>
+                                            <td><?php echo htmlspecialchars($row['name']) ?></td>
+                                            <td><?php echo htmlspecialchars($row['surname']) ?></td>
+                                            <td><?php echo htmlspecialchars($row['identifiant']) ?></td>
+
+                                        <?php
+                                            endwhile;
+                                                ?>
                                             <td>
                                                 <!-- Call to action buttons -->
                                                 <ul class="list-inline m-0">
@@ -62,7 +83,6 @@
                                                     </li>
                                                 </ul>
                                             </td>
-                                        </tr>
                                     </tbody>
                                 </table>
 
