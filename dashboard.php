@@ -166,6 +166,9 @@ try {
                             </div>
                         </section>
                     </div>
+                    <div class="text-center">
+                        <a href="logout.php"><button class="btn btn-primary font-weight-bold">Déconnexion</button></a>
+                    </div>
                 </div>
             </div>
         </div>
