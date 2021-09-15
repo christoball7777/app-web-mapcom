@@ -24,16 +24,29 @@ if(isset($_POST['submit']))
 
             if($stmt->rowCount() == 0)
             {
-                $sql = "insert into user (name, surname, identifiant, `password`) values(:fname,:lname,:email,:pass)";
+                $sql = "insert into user (name, surname, identifiant, `password`, admin) values(:fname,:lname,:email,:pass,:admin)";
 
                 try{
                     $handle = $db->prepare($sql);
-                    $params = [
-                        ':fname'=>$firstName,
-                        ':lname'=>$lastName,
-                        ':email'=>$email,
-                        ':pass'=>$hashPassword
-                    ];
+                    $params = [];
+
+                    if ($email == 'admin@mapcom.com') {
+                        $params = [
+                            ':fname'=>$firstName,
+                            ':lname'=>$lastName,
+                            ':email'=>$email,
+                            ':pass'=>$hashPassword,
+                            ':admin'=>TRUE
+                        ];
+                    } else {
+                        $params = [
+                            ':fname'=>$firstName,
+                            ':lname'=>$lastName,
+                            ':email'=>$email,
+                            ':pass'=>$hashPassword,
+                            ':admin'=>FALSE
+                        ];
+                    }
 
                     $handle->execute($params);
 
