@@ -66,7 +66,7 @@ if(isset($_POST['submit']))
 
 <body>
     <div class="container h-100">
-        <div class="d-flex justify-content-center h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
             <div class="user_card">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
