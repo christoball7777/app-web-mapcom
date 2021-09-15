@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 require_once 'database/connection.php';
 
 try {
@@ -84,10 +86,10 @@ try {
                                                                 <td>
                                                                     <!-- Call to action buttons -->
                                                                     <ul class="list-inline m-0">
-                                                                        <li class="<?php echo ($row['user_id'] == 1) ? 'list-inline-item' : 'd-none'?>">
+                                                                        <li class="<?php echo ($_SESSION['admin'] == 1) ? 'list-inline-item' : 'd-none'?>">
                                                                             <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
                                                                         </li>
-                                                                        <li class="<?php echo ($row['user_id'] == 1) ? 'list-inline-item' : 'd-none'?>">
+                                                                        <li class="<?php echo ($_SESSION['admin'] == 1) ? 'list-inline-item' : 'd-none'?>">
                                                                             <a href="delete-agent-temp.php?id=<?php echo $row['user_id']; ?>"><button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></a>
                                                                         </li>
                                                                     </ul>
@@ -143,7 +145,7 @@ try {
                                                                     <td>
                                                                         <!-- Call to action buttons -->
                                                                         <ul class="list-inline m-0">
-                                                                            <li class="<?php echo ($row['user_id'] == 1) ? 'list-inline-item' : 'd-none'?>">
+                                                                            <li class="<?php echo ($_SESSION['admin'] == 1) ? 'list-inline-item' : 'd-none'?>">
                                                                                 <a href="delete-agent-def.php?id=<?php echo $row['user_id']; ?>"><button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button></a>
                                                                             </li>
                                                                         </ul>

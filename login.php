@@ -23,6 +23,7 @@ if(isset($_POST['submit']))
                 {
                     unset($getRow['password']);
                     $_SESSION = $getRow;
+                    $_SESSION['admin'] = ($email == 'admin@mapcom.com') ? 1 : 0;
                     header('location:dashboard.php');
                     exit();
                 }
