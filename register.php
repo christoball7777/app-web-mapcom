@@ -36,7 +36,7 @@ if(isset($_POST['submit']))
                             ':lname'=>$lastName,
                             ':email'=>$email,
                             ':pass'=>$hashPassword,
-                            ':admin'=>TRUE
+                            ':admin'=>1
                         ];
                     } else {
                         $params = [
@@ -44,7 +44,7 @@ if(isset($_POST['submit']))
                             ':lname'=>$lastName,
                             ':email'=>$email,
                             ':pass'=>$hashPassword,
-                            ':admin'=>FALSE
+                            ':admin'=>0
                         ];
                     }
 
